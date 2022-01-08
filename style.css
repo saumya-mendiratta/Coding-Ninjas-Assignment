@@ -1,0 +1,111 @@
+#event-category{
+    height: max-content;
+    width: 80%;
+    background-color:lightblue;
+}
+
+.navbar{
+    list-style:none;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+#category-navbar{
+    height:max-content;
+    border : 2px solid black ; 
+}
+
+li{
+    /* margin: 5px; */
+    cursor: pointer;
+}
+
+.navbar>li{
+    padding: 20px;
+    border: 2px solid grey;
+    border-radius: 20px;
+}
+
+#subcategory-navbar{
+    margin: 5px 0 5px 0 ;
+    width: 70%;
+    border : 2px solid black ;
+    /* border-top: 0;  */
+
+}
+
+#event-sub-category{
+    height: 90%;
+    width: 100%;
+    background-color:lightgrey;
+    display: flex;
+}
+
+#cards{
+    height:100%;
+    width: 70%;
+    background-color:green;
+}
+.card{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+}
+
+#tags{
+    height:100%;
+    width: 30%;
+    background-color:cyan;
+}
+
+.tag-list>li{
+    margin: 10px ; 
+}
+
+#tags h3{
+    text-align: center;
+}
+
+.tag-list{
+    list-style:none;
+}
+
+.tag-list li{
+    margin-bottom: 0.4rem;
+}
+
+#cards{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    height:400px;
+    width:400px;
+}
+
+.card img{
+    height: 20%;
+    width: 100%;;
+}
+
+.card-details{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-date{
+    vertical-align: middle;
+    width: 70%;
+}
+
+.card-fee-venue{
+    text-align: center;
+
+}
+
+.card-tag{
+    border: 1px solid grey;
+    padding: 5px ; 
+    width:max-content;
+}
