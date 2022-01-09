@@ -1,7 +1,13 @@
+html *
+{
+   font-family: Sans-serif !important;
+}
+
 #event-category{
     height: max-content;
-    width: 80%;
+    width: 90% ; 
     background-color:lightblue;
+    margin:2%;
 }
 
 .navbar{
@@ -43,13 +49,17 @@ li{
 
 #cards{
     height:100%;
-    width: 70%;
-    background-color:green;
+    width: 95%;
+    background-color: rgb(235, 228, 228);
+    flex-wrap: wrap;
 }
 .card{
-    height: 100px;
-    width: 100px;
     background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    height:500px;
+    width:400px;
+    margin:20px;
 }
 
 #tags{
@@ -76,26 +86,37 @@ li{
 
 #cards{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.card{
-    height:400px;
-    width:400px;
-}
 
 .card img{
-    height: 20%;
-    width: 100%;;
+    height: 25%;
+    width: 100%;
+    border-bottom:1px solid grey ; 
+}
+
+.card-name{
+    font-size: 1.5rem;
+    font-weight:bold;
+    margin : 10px;
 }
 
 .card-details{
     display: flex;
     flex-direction: row;
+    border :  2px solid black ;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.card-details p{
+    margin:10px;
 }
 
 .card-date{
     vertical-align: middle;
+    border-right :  2px solid black ;
     width: 70%;
 }
 
@@ -104,8 +125,24 @@ li{
 
 }
 
+.card-fee-venue div{
+    margin:5px;
+}
+
+.card-desc{
+    margin : 10px;
+}
+
 .card-tag{
     border: 1px solid grey;
     padding: 5px ; 
     width:max-content;
+    margin:10px;
+}
+
+.fee-venue{
+    font-size: 0.8rem;
+}
+.fee-venue-ans{
+    margin-top: -15%;
 }

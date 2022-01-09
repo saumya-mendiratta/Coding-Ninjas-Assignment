@@ -45,38 +45,71 @@ function showTags(){
 
 showTags();
 
+let cards = $("#cards");
+var category = "ALL_EVENTS" ;
+var subcategory = "Archived" ;
+var tag_list="";
+var offset=1;
+let imgurl = "https://www.codingninjas.com/blog/wp-content/uploads/2020/04/LOGO-05.png" ; 
 
-// var category = "All Events" ; 
 
-// function showcard(page) {
-//     let sol = input.val();
+$("#WEBINAR").click(function (e) {
+    category = "WEBINAR" ;
+    $(".card").remove(); 
+    showcard();
+});
+
+$("#ALL_EVENTS").click(function (e) {
+    category = "ALL_EVENTS" ;
+    $(".card").remove();
+    showcard(); 
+});
+
+$("#CODING_EVENT").click(function (e) {
+    category = "CODING_EVENT" ;
+    $(".card").remove();
+    showcard();
+});
+
+$("#BOOTCAMP_EVENT").click(function (e) {
+    category = "BOOTCAMP_EVENT" ;
+    $(".card").remove();
+    showcard();
+});
+
+$("#WORKSHOP").click(function (e) {
+    category = "WORKSHOP" ;
+    $(".card").remove();
+    showcard();
+});
+
+
+
+function showcard(page) {
     
-    
-//     let url = "https://api.codingninjas.com/api/v3/events?event_category="+ category + "&event_sub_category=" + subcategory + "&tag_list=" + tag_list "+&offset="+offset+"";
+    let url = "https://api.codingninjas.com/api/v3/events?event_category="+ category + "&event_sub_category=" + subcategory + "&tag_list=" + tag_list  + "&offset="+offset+"";
 
-//     $.get(url, function (data) {
-//         let photos = data.photos;
-//         updateButtons(photos);
+    $.get(url, function (data) {
 
-//         if (photos.length === 0) {
-//             alert("No more images to show...");
-//         } else {
-//             $("#nasa-images img").remove();
-//             for (let photo of photos) {
-//                 nasaImages.append('<img src="' + photo.img_src + '" alt="' + photo.id + '">');
-//             }
-//         }
-//     });
-// }
+        let events = data.data.events;
 
-// showcard();
+        if ( data.data.page_count === 0) {
+            alert("No Events to show");
+        } else {
+            for (let ev of events) {
+                cards.append(
+                '<div class="card"> <img src="' + ev.cover_picture + '" alt="' + ev.mobile_cover_picture  + '"> <p class="card-name">' + ev.name + '</p> <div class="card-details"> <div class="card-date"><p>Starts on 8 Jan , 2022 </p> </div> <div class="card-fee-venue"> <div> <span class="fee-venue">Entry Fee : </span> <span class="fee-venue-ans">' +  ev.fees +'</span> </div> <div>  <span class="fee-venue" >Venue : </span> <span class="fee-venue-ans">'+  ev.venue + '</span>  </div> </div> </div> <p class="card-desc">'+ ev.short_desc + '</p><div class="card-tag"> tags associated </div> </div>');
+            }
 
 
-// $("form button").click(function (e) {
-//     e.preventDefault();
-//     page = 1;
-//     showPage(page);
-// });
+        }
+    });
+}
+
+showcard();
+
+
+
 
 // prev.click(function (e) {
 //     showPage(--page);
