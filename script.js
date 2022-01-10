@@ -18,7 +18,9 @@ var category_buttons = document.getElementsByClassName("category-button");
 for (var i = 0; i < category_buttons.length; i++) {
 
     category_buttons[i].addEventListener('click', function () {
-        
+
+        $("#no-event").remove();
+
         category = this.getAttribute('data-value');
 
         //Toggle switch functionality implemented
@@ -40,6 +42,7 @@ for (var i = 0; i < category_buttons.length; i++) {
         subcategory = "Archived" ;
         istagclicked = false ; 
         $(".card").remove();
+        $("#no-event").remove();
         offset=1;
         pg_number=1;
         $("#page-number").text(pg_number);
@@ -57,6 +60,8 @@ var subcategory_buttons = document.getElementsByClassName("subcategory-button");
 for (var i = 0; i < subcategory_buttons.length; i++) {
 
     subcategory_buttons[i].addEventListener('click', function () {
+
+        $("#no-event").remove();
         
         subcategory = this.getAttribute('data-value');
 
@@ -76,6 +81,7 @@ for (var i = 0; i < subcategory_buttons.length; i++) {
         prev_subcategory_clicked = curr_subcategory_clicked  ; 
 
         $(".card").remove();
+        $("#no-event").remove();
         istagclicked = false ; 
         offset=1;
         pg_number=1;
@@ -95,7 +101,7 @@ function showcard(page) {
         let events = data.data.events;
 
         if ( data.data.page_count === 0) {
-            alert("No Events to show");
+            $("#cards").append('<h1 id="no-event" style="font-size:100px"> No events found </h1>');
         } else {
             for (let ev of events) {
 
@@ -117,6 +123,7 @@ function showcard(page) {
 //Calling the showcard for display of first time
 showcard();
 
+
 // Click functionality on tags
 var tag_buttons = document.getElementsByClassName("tag");
 
@@ -124,6 +131,8 @@ var istagclicked = false ;
 for (var i = 0; i < tag_buttons.length; i++) {
 
     tag_buttons[i].addEventListener('click', function () {
+
+        $("#no-event").remove();
         
         tag_button = this.getAttribute('data-value');
 
@@ -131,8 +140,9 @@ for (var i = 0; i < tag_buttons.length; i++) {
 
         $.get(url, function (data) {
 
-            if(!istagclicked)
-                 $(".card").remove();
+            if(!istagclicked){
+                $(".card").remove();
+            }
             
             istagclicked = true ; 
     
@@ -150,8 +160,11 @@ for (var i = 0; i < tag_buttons.length; i++) {
                         $("#"+ ev.id ).append('<div class="card-tag"><span>'+ card_tag +'</span></div>');
                     }
                 }
+
             }
+
             }
+            
         });       
     });
 }
@@ -180,6 +193,7 @@ prev_button.click(function () {
             pg_number -- ; 
             $("#page-number").text(pg_number);
             $(".card").remove();
+            $("#no-event").remove();
             showcard();
         }
     });
@@ -190,6 +204,7 @@ next_button.click(function () {
             pg_number ++ ; 
             $("#page-number").text(pg_number);
             $(".card").remove();
+            $("#no-event").remove();
             showcard();
     });
 
