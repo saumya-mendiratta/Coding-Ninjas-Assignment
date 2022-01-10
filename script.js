@@ -36,7 +36,7 @@ function showTags(){
         let tags = data.data.tags;
 
         for (let tag of tags) {
-            tagslist.append('<li>' + tag + '</li>');
+            tagslist.append('<li class ="tag" data-value="' + tag + '">' + tag + '</li>');
         }
 
     });
@@ -50,39 +50,34 @@ var category = "ALL_EVENTS" ;
 var subcategory = "Archived" ;
 var tag_list="";
 var offset=1;
-let imgurl = "https://www.codingninjas.com/blog/wp-content/uploads/2020/04/LOGO-05.png" ; 
 
 
-$("#WEBINAR").click(function (e) {
-    category = "WEBINAR" ;
-    $(".card").remove(); 
-    showcard();
-});
+var category_buttons = document.getElementsByClassName("category-button");
 
-$("#ALL_EVENTS").click(function (e) {
-    category = "ALL_EVENTS" ;
-    $(".card").remove();
-    showcard(); 
-});
+for (var i = 0; i < category_buttons.length; i++) {
 
-$("#CODING_EVENT").click(function (e) {
-    category = "CODING_EVENT" ;
-    $(".card").remove();
-    showcard();
-});
+    category_buttons[i].addEventListener('click', function () {
+        
+        category = this.getAttribute('data-value');
+        subcategory = "Archived" ;
+        // console.log(category);
+        $(".card").remove();
+        showcard();
+    });
+}
 
-$("#BOOTCAMP_EVENT").click(function (e) {
-    category = "BOOTCAMP_EVENT" ;
-    $(".card").remove();
-    showcard();
-});
+var subcategory_buttons = document.getElementsByClassName("subcategory-button");
 
-$("#WORKSHOP").click(function (e) {
-    category = "WORKSHOP" ;
-    $(".card").remove();
-    showcard();
-});
+for (var i = 0; i < subcategory_buttons.length; i++) {
 
+    subcategory_buttons[i].addEventListener('click', function () {
+        
+        subcategory = this.getAttribute('data-value');
+        // console.log(subcategory);
+        $(".card").remove();
+        showcard();
+    });
+}
 
 
 function showcard(page) {
@@ -98,7 +93,7 @@ function showcard(page) {
         } else {
             for (let ev of events) {
                 cards.append(
-                '<div class="card"> <img src="' + ev.cover_picture + '" alt="' + ev.mobile_cover_picture  + '"> <p class="card-name">' + ev.name + '</p> <div class="card-details"> <div class="card-date"><p>Starts on 8 Jan , 2022 </p> </div> <div class="card-fee-venue"> <div> <span class="fee-venue">Entry Fee : </span> <span class="fee-venue-ans">' +  ev.fees +'</span> </div> <div>  <span class="fee-venue" >Venue : </span> <span class="fee-venue-ans">'+  ev.venue + '</span>  </div> </div> </div> <p class="card-desc">'+ ev.short_desc + '</p><div class="card-tag"> tags associated </div> </div>');
+                '<div class="card"> <img src="' + ev.cover_picture + '" alt="' + ev.mobile_cover_picture  + '"> <p class="card-name">' + ev.name + '</p> <div class="card-details"> <div class="card-date"><p>Starts on 8 Jan , 2022 </p> </div> <div class="card-fee-venue"> <div> <span class="fee-venue">Entry Fee : </span> <span class="fee-venue-ans">' +  ev.fees +'</span> </div> <div>  <span class="fee-venue" >Venue : </span> <span class="fee-venue-ans">'+  ev.venue + '</span>  </div> </div> </div> <p class="card-desc">'+ ev.short_desc + '</p><div class="card-tag"> tags associated </div> <div class="card-footer"> <span> <img src="'+ `./images/user.png`+  '"></img> </span>' +  ev.seats_filled + ' participated </div> </div>');
             }
 
 

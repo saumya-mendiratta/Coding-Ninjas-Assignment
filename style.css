@@ -1,13 +1,36 @@
 html *
 {
-   font-family: Sans-serif !important;
+   font-family: 'Ubuntu', sans-serif !important;
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #979899; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #979899; 
+}
+
 
 #event-category{
     height: max-content;
     width: 90% ; 
-    background-color:lightblue;
+    background-color: #a0c0d0b0 ;
     margin:2%;
+    border-radius: 15px;
 }
 
 .navbar{
@@ -18,7 +41,10 @@ html *
 }
 #category-navbar{
     height:max-content;
-    border : 2px solid black ; 
+    border-bottom : 2px solid black ; 
+}
+#category-navbar .navbar {
+    padding-top: 18px;
 }
 
 li{
@@ -27,30 +53,27 @@ li{
 }
 
 .navbar>li{
-    padding: 20px;
+    padding: 15px;
     border: 2px solid grey;
-    border-radius: 20px;
+    border-radius: 9px;
+    font-weight: bolder;
 }
 
 #subcategory-navbar{
-    margin: 5px 0 5px 0 ;
     width: 70%;
-    border : 2px solid black ;
-    /* border-top: 0;  */
-
 }
 
 #event-sub-category{
     height: 90%;
     width: 100%;
-    background-color:lightgrey;
     display: flex;
+    background-image: linear-gradient(  90deg ,#6e797e,#4f5a60,#6084a0e6);
 }
 
 #cards{
     height:100%;
     width: 95%;
-    background-color: rgb(235, 228, 228);
+    border-right: 2px solid lightgrey;
     flex-wrap: wrap;
 }
 .card{
@@ -60,12 +83,14 @@ li{
     height:500px;
     width:400px;
     margin:20px;
+    display: flex;
+    flex-direction: column;
+    position:relative;
 }
 
 #tags{
     height:100%;
     width: 30%;
-    background-color:cyan;
 }
 
 .tag-list>li{
@@ -74,6 +99,7 @@ li{
 
 #tags h3{
     text-align: center;
+    color: #ffe5e5 ; 
 }
 
 .tag-list{
@@ -81,7 +107,20 @@ li{
 }
 
 .tag-list li{
-    margin-bottom: 0.4rem;
+    color: #000000 ; 
+    font-weight: bold;
+    font-size: 15px;
+    padding: 6px 12px;
+    border-radius: 2px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    background: #eee;
+    /* background-image: linear-gradient(  90deg ,#2e373c,#663f3f,#32302b); */
+    opacity: 0.8;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    width: max-content;
 }
 
 #cards{
@@ -138,6 +177,24 @@ li{
     padding: 5px ; 
     width:max-content;
     margin:10px;
+}
+
+.card-footer{
+    position: absolute;
+    bottom: 17px;
+    padding-left: 11px;
+    padding-top: 5px;
+    border-top: 2px solid black ;
+    width: 100%;
+}
+
+.card-footer img{
+    position: relative;
+    top: 5px;
+    height:25px;
+    width: 25px;
+    border: none;
+    border-radius: 50%;
 }
 
 .fee-venue{
