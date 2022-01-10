@@ -1,27 +1,3 @@
-var tagslist = $(".tag-list");
-var tag ; 
-
-//Function to show all the tags on the right
-// function showTags(){
-
-//     let url = "https://api.codingninjas.com/api/v3/event_tags";
-
-//     $.get(url, function (data) {
-
-//         //data is another parameter
-//         let tags = data.data.tags;
-
-//         for (let tag of tags) {
-//             tagslist.append('<li class ="tag" data-value="' + tag + '">' + tag + '</li>');
-//         }
-
-//     });
-
-// }
-
-//Calling the showcard for display of first time
-// showTags();
-
 
 //Default variables for the API to load data
 let cards = $("#cards");
