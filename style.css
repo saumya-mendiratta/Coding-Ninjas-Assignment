@@ -1,12 +1,18 @@
 html *
 {
    font-family: 'Ubuntu', sans-serif !important;
+   scroll-behavior: smooth;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
     background-image: url('https://i.pinimg.com/originals/da/f6/18/daf61862ec45445931d2216778e92af8.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -44,6 +50,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
+    
 }
 #category-navbar{
     height:max-content;
@@ -98,6 +105,7 @@ li{
     display: flex;
     flex-direction: column;
     position:relative;
+    box-shadow: 0px 0px 3px 5px rgb(230 196 196 / 20%);
 }
 
 #tags{
@@ -221,4 +229,40 @@ li{
 }
 .fee-venue-ans{
     margin-top: -15%;
+}
+
+#paginator{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 18px;
+    margin-bottom: 76px;
+    left: 60%;
+    bottom: 9px;
+}
+
+#paginator div{
+    height: 25px;
+    width: 45px;
+    border: 2px solid lightgray;
+    border-radius: 8px;
+    color: white;
+    padding:8px ; 
+    padding-left: 10px;
+    padding-bottom:0;
+    margin: 10px;
+
+}
+
+#paginator div a{
+    text-decoration: none;
+    color: white;
+}
+
+#paginator #page-number{
+    width:13px;
+}
+
+#paginator div:hover{
+    cursor: pointer;
 }
