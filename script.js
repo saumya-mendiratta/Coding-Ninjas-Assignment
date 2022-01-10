@@ -45,6 +45,7 @@ for (var i = 0; i < category_buttons.length; i++) {
         $("#no-event").remove();
         offset=1;
         pg_number=1;
+        istagclicked = false ;
         $("#page-number").text(pg_number);
         showcard();
     });
@@ -85,6 +86,7 @@ for (var i = 0; i < subcategory_buttons.length; i++) {
         istagclicked = false ; 
         offset=1;
         pg_number=1;
+        istagclicked = false ;
         $("#page-number").text(pg_number);
         showcard();
     });
@@ -194,6 +196,7 @@ prev_button.click(function () {
             $("#page-number").text(pg_number);
             $(".card").remove();
             $("#no-event").remove();
+            istagclicked = false ;
             showcard();
         }
     });
@@ -205,6 +208,7 @@ next_button.click(function () {
             $("#page-number").text(pg_number);
             $(".card").remove();
             $("#no-event").remove();
+            istagclicked = false ;
             showcard();
     });
 
