@@ -3,6 +3,12 @@ html *
    font-family: 'Ubuntu', sans-serif !important;
 }
 
+body{
+    background-image: url('https://i.pinimg.com/originals/da/f6/18/daf61862ec45445931d2216778e92af8.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -28,7 +34,7 @@ html *
 #event-category{
     height: max-content;
     width: 90% ; 
-    background-color: #a0c0d0b0 ;
+    background-color: #131414;
     margin:2%;
     border-radius: 15px;
 }
@@ -41,7 +47,7 @@ html *
 }
 #category-navbar{
     height:max-content;
-    border-bottom : 2px solid black ; 
+    border-bottom : 2px solid lightgrey ; 
 }
 #category-navbar .navbar {
     padding-top: 18px;
@@ -57,6 +63,12 @@ li{
     border: 2px solid grey;
     border-radius: 9px;
     font-weight: bolder;
+    color:lightgray;
+}
+
+.navbar>li:hover{
+    background: lightgray;
+    color: black;
 }
 
 #subcategory-navbar{
@@ -174,9 +186,16 @@ li{
 
 .card-tag{
     border: 1px solid grey;
-    padding: 5px ; 
+    padding: 4px ; 
     width:max-content;
     margin:10px;
+    border-radius: 6px;
+    background-color:lightgray;
+}
+
+.card-tag span{
+    font-size: 13px;
+    padding:3px;
 }
 
 .card-footer{
