@@ -106,7 +106,7 @@ for (var i = 0; i < tag_buttons.length; i++) {
 
         // console.log(tag_list);
 
-        if(!istagclicked)
+        // if(!istagclicked)
            $(".card").remove();
 
         istagclicked = true; 
@@ -165,6 +165,7 @@ function timeConverter(UNIX_timestamp){
     return time;
   }
 
+  
 //Paginator 
 var pg_number = 1 ; 
 var prev_button = $("#prev-page a");
